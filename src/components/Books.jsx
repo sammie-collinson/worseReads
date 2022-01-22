@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
 const Books = (props) => {
+    const [bookState, setBookState] = useState('')
     const API = 'https://openlibrary.org'
 
     const isbnList = props.books.map((book) => (
@@ -27,9 +28,8 @@ const Books = (props) => {
                     const response = await axios.get(`${works[i]}`)
                     workArr.push(response.data)
                     let coverID = workArr[i].covers[0]
-                    // console.log(coverID)
                     workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
-                    console.log(workArr)
+                    setBookState(workArr)
 
                 }
             }
@@ -37,12 +37,14 @@ const Books = (props) => {
             
         } getBooks()
     },[isbnList])
+
+    console.log(bookState)
     
     return(
         <div>
             {
-                props.books.map((book) => (
-                    <h3 key={book.ISBN}>{book.ISBN}</h3>
+                bookState.map((book) => (
+                    <h3 key={book.key}>{book.title}</h3>
                 ))
             }
         </div>
