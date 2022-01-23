@@ -27,12 +27,14 @@ const App = () => {
         })
         async function getWorks() {
               let workArr = [];
-              for(let i=0; i<works.length; i++) {
-              const response = await axios.get(`${works[i]}`)
-              workArr.push(response.data)
-              let coverID = workArr[i].covers[0]
-              workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
-              setBookState(workArr)
+              while(workArr.length < works.length){
+                for(let i=0; i<works.length; i++) {
+                  const response = await axios.get(`${works[i]}`)
+                  workArr.push(response.data)
+                  let coverID = workArr[i].covers[0]
+                  workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
+                }
+                  setBookState(workArr)
       
             }
           }
