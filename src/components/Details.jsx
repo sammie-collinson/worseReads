@@ -3,11 +3,11 @@ import React from 'react';
 
 const Details = (props) => {
     return(
-        <div>
-            <ul className="details" key={props.key}>
+        <div key={props.key}>
+            <ul>
             {
                 props.subjects.map((subject) => (
-                    <li key={props.key}>
+                    <li>
                         {subject}
                     </li>
                 ))

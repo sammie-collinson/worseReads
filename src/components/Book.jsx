@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Details from './Details';
 
 const Book = (props) => {
+    const [displayDetails, setDisplayDetails] = useState(false)
+
+    const toggleClass = () => {
+        if(displayDetails===false){
+            setDisplayDetails(true)
+        } if(displayDetails===true){
+            setDisplayDetails(false)
+        }
+    }
+
     return(
         <div key={props.key} className="card">
             <h3>{props.title}</h3>
-            <button>View Details</button>
+            <button onClick={toggleClass}>View Details</button>
+            <div className={displayDetails===false? "details" : ""}>
+            <Details subjects={props.subjects} referenceLink={props.referenceLink} />
+            </div>
             <img src={props.coverArt} alt="book cover"></img>
-            <Details subjects={props.subjects} referenceLink={props.referenceLink}/>
+
         </div>        
     )
 };
