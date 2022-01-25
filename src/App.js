@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h2>Sammie's Sanderson Outpost</h2>
+      <h1>Sammie's Sanderson Outpost</h1>
       <Books bookState={bookState} />
     </div>
   );
