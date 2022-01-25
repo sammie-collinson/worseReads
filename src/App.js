@@ -44,7 +44,6 @@ const App = () => {
         getWorks()
     } getISBNInfo()
   },[books])
-console.log(bookState)
 
   return (
     <div className="App">

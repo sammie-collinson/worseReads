@@ -20,7 +20,6 @@ const Book = (props) => {
             <Details subjects={props.subjects} referenceLink={props.referenceLink} />
             </div>
             <img src={props.coverArt} alt="book cover"></img>
-
         </div>        
     )
 };
