@@ -1,16 +1,15 @@
 import React from 'react';
-
+import Book from './Book';
 
 const Books = (props) => {
     return(
         <div className="grid">
             {
                 props.bookState.map((book) => (
-                    <div key={book.key} className="card">
-                     <h3>{book.title}</h3>
-                     <button>View Details</button>
-                     <img src={book.coverArt} alt="book cover"></img>
+                    <div key={book.key} > 
+                        <Book title={book.title} coverArt={book.coverArt} subjects={book.subjects} referenceLink={book.referenceLink}  />     
                     </div>
+
                 ))
             }
         </div>

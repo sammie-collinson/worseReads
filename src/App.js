@@ -33,7 +33,10 @@ const App = () => {
                   workArr.push(response.data)
                   let coverID = workArr[i].covers[0]
                   workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
+                  let referenceLink = workArr[i].key
+                  workArr[i].referenceLink = `https://openlibrary.org${referenceLink}`
                 }
+                
                   setBookState(workArr)
       
             }
@@ -45,7 +48,7 @@ console.log(bookState)
 
   return (
     <div className="App">
-      <h2>worseReads</h2>
+      <h2>Sammie's Sanderson Outpost</h2>
       <Books bookState={bookState} />
     </div>
   );
