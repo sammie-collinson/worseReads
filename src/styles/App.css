@@ -67,3 +67,11 @@ li {
 .details {
   display: none;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
