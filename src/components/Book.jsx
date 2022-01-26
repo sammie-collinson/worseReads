@@ -13,7 +13,7 @@ const Book = (props) => {
     }
 
     return(
-        <div key={props.key} className="card">
+        <div key={props.key} className={props.darkMode===false? "card-light": "card-dark"}>
             <h3>{props.title}</h3>
             <button onClick={toggleClass}>View Details</button>
             <div className={displayDetails===false? "details" : ""}>

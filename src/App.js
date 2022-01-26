@@ -55,7 +55,7 @@ const App = () => {
   },[books])
 
   return (
-    <div className="App">
+    <div className={darkMode===false? "App":"App-dark"}>
       <button className={darkMode===false? "lightmode": "darkmode"} onClick={toggleClass}>{darkMode===false? 'Dark Mode': 'Light Mode'}</button>
       <h1>Sammie's Sanderson Outpost</h1>
       <Books bookState={bookState} darkMode={darkMode} />
