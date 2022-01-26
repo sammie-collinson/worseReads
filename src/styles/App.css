@@ -17,6 +17,20 @@ button:hover {
   background-color: #e24507;
 }
 
+.lightmode {
+  color: white;
+  background-color:#22134b
+}
+
+.darkmode {
+  color: black;
+  background-color: #e24507
+}
+
+.topbutton {
+  float: left;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));

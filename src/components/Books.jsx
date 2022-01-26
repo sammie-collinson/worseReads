@@ -7,7 +7,7 @@ const Books = (props) => {
             {
                 props.bookState.map((book) => (
                     <div key={book.key} > 
-                        <Book title={book.title} coverArt={book.coverArt} subjects={book.subjects} referenceLink={book.referenceLink}  />     
+                        <Book title={book.title} coverArt={book.coverArt} subjects={book.subjects} referenceLink={book.referenceLink} darkMode={props.darkMode}  />     
                     </div>
 
                 ))

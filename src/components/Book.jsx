@@ -17,7 +17,7 @@ const Book = (props) => {
             <h3>{props.title}</h3>
             <button onClick={toggleClass}>View Details</button>
             <div className={displayDetails===false? "details" : ""}>
-            <Details subjects={props.subjects} referenceLink={props.referenceLink} />
+            <Details subjects={props.subjects} referenceLink={props.referenceLink} darkMode ={props.darkMode} />
             </div>
             <img src={props.coverArt} alt="book cover"></img>
         </div>        

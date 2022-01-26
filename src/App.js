@@ -7,12 +7,21 @@ import books from './books';
 
 
 const App = () => {
-  
+
+  const [darkMode, setDarkMode] = useState(false);
   const [bookState, setBookState] = useState([])
   const API = `https://openlibrary.org`
   const ISBNList = books.map((book) => (
     `${API}/isbn/${book.ISBN}.json`
     ))
+
+    const toggleClass = () => {
+      if(darkMode===false){
+          setDarkMode(true)
+      } if(darkMode===true){
+          setDarkMode(false)
+      }
+  }
     
     useEffect(() => {
       async function getISBNInfo() {
@@ -47,8 +56,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <button className={darkMode===false? "lightmode": "darkmode"} onClick={toggleClass}>{darkMode===false? 'Dark Mode': 'Light Mode'}</button>
       <h1>Sammie's Sanderson Outpost</h1>
-      <Books bookState={bookState} />
+      <Books bookState={bookState} darkMode={darkMode} />
     </div>
   );
 }
