@@ -24,6 +24,8 @@ const App = () => {
   }
     
     useEffect(() => {
+      //this async fxn makes an API call using ISBN #'s to get a 'works' ID, which connects to an 
+      //API that has more of the desired data I wanted to use to render components.
       async function getISBNInfo() {
         let ISBNInfo =[];
         for(let i=0; i<ISBNList.length; i++) {
@@ -34,12 +36,18 @@ const App = () => {
           let json = work.works[0].key
           return `${API}${json}.json`
         })
+
+        //this async fxn calls the API using the 'works' ID, which gave me access to more data on each book.
+        //I push each resulting object to an array, set that array of objects as State, and pass that State as a prop to the Books component.
         async function getWorks() {
               let workArr = [];
               while(workArr.length < works.length){
                 for(let i=0; i<works.length; i++) {
                   const response = await axios.get(`${works[i]}`)
                   workArr.push(response.data)
+
+                  //here I add 2 properties to the API object that allow for img src's for book covers
+                  //as well as a reference link that will link back to Open Library in an 'a' tag in another component.
                   let coverID = workArr[i].covers[0]
                   workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
                   let referenceLink = workArr[i].key

@@ -23,18 +23,14 @@ button:hover {
 }
 
 .lightmode {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin-top: 10px;
   color: white;
   background-color:#22134b
 
 }
 
 .darkmode {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin-top: 10px;
   color: black;
   background-color: #e24507
 }
