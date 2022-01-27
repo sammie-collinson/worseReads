@@ -47,7 +47,7 @@ const App = () => {
                   workArr.push(response.data)
 
                   //here I add 2 properties to the API object that allow for img src's for book covers
-                  //as well as a reference link that will link back to Open Library in an 'a' tag in another component.
+                  //I also add a reference link that will link back to Open Library in an 'a' tag in another component.
                   let coverID = workArr[i].covers[0]
                   workArr[i].coverArt = `https://covers.openlibrary.org/b/id/${coverID}-L.jpg`
                   let referenceLink = workArr[i].key
