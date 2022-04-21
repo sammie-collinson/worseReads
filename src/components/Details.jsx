@@ -2,18 +2,21 @@ import React from 'react';
 
 
 const Details = (props) => {
+
+    const {referenceLink, subjects}=props
+
     return(
         <div key={props.key}>
             <ul>
             {
-                props.subjects.map((subject) => (
+                subjects.map((subject) => (
                     <li>
                         {subject}
                     </li>
                 ))
             }
             </ul> 
-            <button><a href={props.referenceLink}>Tell Me More!</a></button>      
+            <button><a href={referenceLink}>Tell Me More!</a></button>      
         </div>
     )
 };

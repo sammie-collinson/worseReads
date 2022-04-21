@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Details from './Details';
 
 const Book = (props) => {
+
+    const {title, coverArt, subjects, referenceLink,darkMode}=props
     const [displayDetails, setDisplayDetails] = useState(false)
 
     const toggleClass = () => {
@@ -13,13 +15,13 @@ const Book = (props) => {
     }
 
     return(
-        <div key={props.key} className={props.darkMode===false? "card-light": "card-dark"}>
-            <h3>{props.title}</h3>
+        <div key={props.key} className={darkMode===false? "card-light": "card-dark"}>
+            <h3>{title}</h3>
             <button onClick={toggleClass}>View Details</button>
             <div className={displayDetails===false? "details" : ""}>
-            <Details subjects={props.subjects} referenceLink={props.referenceLink} darkMode ={props.darkMode} />
+            <Details subjects={subjects} referenceLink={referenceLink} darkMode ={darkMode} />
             </div>
-            <img src={props.coverArt} alt="book cover"></img>
+            <img src={coverArt} alt={title}></img>
         </div>        
     )
 };
