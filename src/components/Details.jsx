@@ -6,7 +6,7 @@ const Details = (props) => {
     const {referenceLink, subjects}=props
 
     return(
-        <div key={props.key}>
+        <div key={referenceLink}>
             <ul>
             {
                 subjects.map((subject) => (

@@ -11,7 +11,7 @@ const Book = (props) => {
     }
 
     return(
-        <div key={props.key} className={darkMode===false? "card-light": "card-dark"}>
+        <div key={referenceLink} className={darkMode===false? "card-light": "card-dark"}>
             <h3>{title}</h3>
             <button onClick={toggleClass}>View Details</button>
             <div className={displayDetails===false? "details" : ""}>
