@@ -16,11 +16,7 @@ const App = () => {
     ))
 
     const toggleClass = () => {
-      if(darkMode===false){
-          setDarkMode(true)
-      } if(darkMode===true){
-          setDarkMode(false)
-      }
+      setDarkMode(!darkMode)
   }
     
     useEffect(() => {

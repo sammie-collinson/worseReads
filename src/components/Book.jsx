@@ -7,11 +7,7 @@ const Book = (props) => {
     const [displayDetails, setDisplayDetails] = useState(false)
 
     const toggleClass = () => {
-        if(displayDetails===false){
-            setDisplayDetails(true)
-        } if(displayDetails===true){
-            setDisplayDetails(false)
-        }
+        setDisplayDetails(!displayDetails)
     }
 
     return(
